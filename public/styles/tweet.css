@@ -1,0 +1,53 @@
+.all-tweets {
+  width: 100%;
+  margin-top: 1.5rem;
+ }
+
+ .all-tweets footer {
+   border-top: 3px solid;
+   padding: .5rem;
+
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .all-tweets img {
+   width: 4.5rem;
+   height: 4.5rem;
+   margin-right: .3rem;
+ }
+ .all-tweets footer p {
+   margin: 0;
+ }
+
+ .tweet {
+  border: 3px solid;
+  padding: 1.5rem;
+  margin: 1rem 0;
+ }
+
+ .tweet:hover {
+  box-shadow: 5px 5px #C9CAE2;
+ }
+
+.tweet header {
+   display: flex;
+   justify-content: space-between;
+ }
+
+.username {
+  color: #D6D6E2;
+ }
+
+.tweet-avatar {
+   display: flex;
+ }
+
+ .social-buttons .fas {
+   cursor: pointer;
+   margin-right: .3rem;
+ }
+
+.social-buttons .fas:hover {
+  color: goldenrod;
+}
