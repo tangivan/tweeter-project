@@ -6,10 +6,11 @@
  */
 
 $(document).ready(function() {
-
+  $('#error').hide();
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
-      $('#all-tweets').prepend(createTweetElement(tweet));
+      console.log(tweet);
+      $('.all-tweets').prepend(createTweetElement(tweet));
     });
   };
 
@@ -41,6 +42,7 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event) {
     event.preventDefault();
+    console.log("hi");
     const data = $(this).serialize();
     const maxLength = 140;
     const tweetBody = data.substr(5);
@@ -62,8 +64,19 @@ $(document).ready(function() {
         $("#error").slideUp("fast");
       }
       $(this)[0].reset();
+      $('.all-tweets').empty();
       loadTweets();
     });
+  });
+
+  $("nav div").on("click", function(event) {
+    event.preventDefault();
+    if ($(".new-tweet").is(":visible")) {
+      $(".new-tweet").slideUp("fast");
+    } else {
+      $(".new-tweet").slideDown("fast");
+      $("textarea").focus();
+    }
   });
 
   const loadTweets = () => {
@@ -75,6 +88,7 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
+
   loadTweets();
 
   const escape = function(str) {
