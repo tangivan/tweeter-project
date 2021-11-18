@@ -1,0 +1,11 @@
+#error {
+  width: 100%;
+  border: 3px solid red;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#error p {
+  margin: 0 auto;
+  color: red;
+}
