@@ -45,10 +45,12 @@ $(document).ready(function() {
     const maxLength = 140;
     const tweetBody = data.substr(5);
     if (tweetBody.length > maxLength) {
-      return alert("Your tweet is too long!");
+      $("#error p").text("You wrote too much!");
+      return $("#error").slideDown("fast");
     }
     if (!tweetBody) {
-      return alert("You didn't write anything!");
+      $("#error p").text("You didn't write anything!");
+      return $("#error").slideDown("fast");
     }
 
     $.ajax({
@@ -56,6 +58,9 @@ $(document).ready(function() {
       type: "POST",
       data
     }).then(() => {
+      if ($("#error p").is(":visible")) {
+        $("#error").slideUp("fast");
+      }
       $(this)[0].reset();
       loadTweets();
     });
