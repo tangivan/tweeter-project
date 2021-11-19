@@ -1,3 +1,4 @@
+/* Navbar Component */
 nav {
   display: flex;
   justify-content: space-between;
@@ -5,14 +6,16 @@ nav {
 
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: #3A81F5;
   color: #FFFFFF;
   padding: 0 1.5em;
 
+  /* navbar with fixed position  */
   position: fixed;
   top: 0;
   width: 100%;
   overflow: hidden;
+  z-index: 100;
 }
 
 .logo {
@@ -20,15 +23,53 @@ nav {
   font-family: 'Bungee', cursive;
   margin-bottom: 1rem;
   align-self: flex-end;
+  cursor: pointer;
 }
 
-nav i {
-  color: red;
-}
-
-.nav-right {
+/* Navbar CTA */
+nav>div {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.5rem;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* Fixed button to scroll back to top */
+.up-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #2563EB;
+  color: #CEE0FD;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  text-align: center;
+}
+
+.up-button:hover {
+  transform: scale(1.1);
+}
+
+/* Animation for the Compose Tweet arrow icon */
+@keyframes upAndDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+nav button {
+  color: #C4F4FA;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  animation: upAndDown 1s infinite alternate;
 }
