@@ -1,41 +1,59 @@
+/* Compose Tweet Component */
 .new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  display: none;
 }
 
-textarea {
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  }
+
+.new-tweet textarea {
   outline: 0;
   border: 0;
   border-bottom: 2px solid;
-  width: 600px;
+  width: 100%;
   height: 60px;
   padding-top: 30px;
   overflow: hidden;
   background-color: transparent;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
-button {
-  background-color: blue;
-  color: white;
+.new-tweet button {
+  background-color: #2563EB;
+  color: #FFFFFF;
   font-family: 'Bungee', cursive;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all .2s ease-in-out;
+}
+
+.new-tweet button:hover {
+  box-shadow: 0px 10px 13px -7px#2563EB;
+  transform: scale(1.01);
+}
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .counter {
   font-family: 'Bungee', cursive;
+  color: #1E3A8A;
 }
 
-form {
-display: flex;
-flex-direction: column;
-}
-
-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* This class is added when character count is over the limit */
+.js-overLimit {
+  color: red;
 }
