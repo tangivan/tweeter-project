@@ -15,18 +15,36 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  background-color: #FFFFFF;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+ * Main Container Layout 
  */
 
- main {
+ .container {
    width: 90%;
-   background-color: #f4f1ec;
+   background-color: #FFFFFF;
    margin: 0 auto;
  }
+
+ /* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  .container {
+    flex-basis: 50%;
+    min-width: 0;
+    padding: 3rem;
+    margin-top: 75px;
+  }
+
+  /* This fixes flex-basis behavior when content is larger than container  */
+  .all-tweets {
+    min-width: 0;
+  }
+}
