@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -32,44 +33,49 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/scroll-to-top.js"></script>
+  <script type="text/javascript" src="/scripts/toggle-new-tweet.js"></script>
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- Navbar -->
   <nav>
     <span class="logo">tweeter</span>
     <div>
       <span><strong>Write</strong> a new tweet</span>
-      <span><i class="fas fa-angle-double-down"></i></span>
+      <button><i class="fas fa-arrow-down"></i></button>
     </div>
   </nav>
   <header>
     <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Ivan Tang</h2>
+      </div>
     </div>
   </header>
-  <!-- Page-specific (main) content here -->
+  <!-- Main Content -->
   <main class="container">
-    <!-- New Tweets Posted Here -->
+    <!-- Compose Tweet Component -->
     <section class="new-tweet">
-      <div class="error">
-        <p>ERROR: YOU TYPE TOO MUUUCH MAN.</p>
+      <div id="error"">
+        <p></p>
       </div>
-      <form action="/tweets/" method="POST">
+      <form action=" /tweets/" method="POST">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" class="counter" for="tweet-text"></output>
         </div>
-      </form>
+        </form>
     </section>
-    <!-- All Tweets Section -->
-    <section id="all-tweets">
+    <!-- Tweets Container -->
+    <section class="all-tweets">
     </section>
+    <button class="up-button"><i class="fas fa-angle-double-up"></i></button>
   </main>
 </body>
 
