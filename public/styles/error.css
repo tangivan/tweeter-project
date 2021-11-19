@@ -1,11 +1,15 @@
+/* error message box */
 #error {
-  width: 100%;
-  border: 3px solid red;
+  width: 30%;
+  background-color: #FCCFD5;
+  border: 3px solid #881337;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 0px 2px #FFE4E6;
   margin: 1rem auto;
   text-align: center;
 }
 
 #error p {
   margin: 0 auto;
-  color: red;
+  color: #A13E5B;
 }
